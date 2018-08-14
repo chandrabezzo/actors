@@ -1,3 +1,1 @@
-CoreAndroid
-
-- MVP
+List of Actors
