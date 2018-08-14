@@ -1,0 +1,156 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+//apply plugin: 'io.fabric'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
+
+    flavorDimensions "default"
+
+    defaultConfig {
+        applicationId "com.bezzo.actors"
+        minSdkVersion 18
+        targetSdkVersion 27
+        multiDexEnabled true
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        // used by Room, to test migrations
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation":
+                                     "$projectDir/schemas".toString()]
+            }
+        }
+    }
+
+    // used by Room, to test migrations
+    sourceSets {
+        androidTest.assets.srcDirs +=
+                files("$projectDir/schemas".toString())
+    }
+
+    buildTypes {
+        debug {
+
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    productFlavors {
+        development {
+            resValue "string", "app_name", "Actors Dev"
+            buildConfigField("String", "BASE_URL", "\"http://microblogging.wingnity.com/\"")
+        }
+
+        production {
+            resValue "string", "app_name", "Actors"
+            buildConfigField("String", "BASE_URL", "\"http://microblogging.wingnity.com/\"")
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE-FIREBASE.txt'
+        exclude 'META-INF/NOTICE'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+
+    // # Android Support Library
+    implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+    implementation "com.android.support:recyclerview-v7:$rootProject.ext.supportLibraryVersion"
+    implementation "com.android.support:cardview-v7:$rootProject.ext.supportLibraryVersion"
+    implementation "com.android.support:design:$rootProject.ext.supportLibraryVersion"
+    implementation "com.android.support:support-vector-drawable:$rootProject.ext.supportLibraryVersion"
+    implementation "com.android.support:animated-vector-drawable:$rootProject.ext.supportLibraryVersion"
+    implementation "com.android.support.constraint:constraint-layout:$rootProject.ext.constraintLayoutVersion"
+    implementation "com.android.support:support-v4:$rootProject.ext.supportLibraryVersion"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    kapt "android.arch.lifecycle:compiler:$rootProject.ext.androidArchVersion"
+    implementation "com.android.support:multidex:$rootProject.ext.multiDexVersion"
+    implementation "com.karumi:dexter:$rootProject.ext.dexterVersion"
+
+    // # Networking
+    implementation "com.amitshekhar.android:rx2-android-networking:$rootProject.ext.rx2FastAndroidNetworking"
+
+    // # Image
+    implementation "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
+    kapt "com.github.bumptech.glide:compiler:$rootProject.ext.glideVersion"
+
+    // # Parser
+    implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
+
+    // # Local Storage
+    // Room
+    implementation "android.arch.persistence.room:runtime:$rootProject.ext.roomVersion"
+    kapt "android.arch.persistence.room:compiler:$rootProject.ext.roomCompilerVersion"
+    // Room RxJava Support
+    implementation "android.arch.persistence.room:rxjava2:$rootProject.ext.roomVersion"
+    // Testing Room Migration
+    testImplementation "android.arch.persistence.room:testing:$rootProject.ext.roomVersion"
+    // Paging
+    implementation "android.arch.paging:runtime:$rootProject.ext.roomCompilerVersion"
+    // Hawk (replace Shared Preferences)
+    implementation "com.orhanobut:hawk:$rootProject.ext.hawkVersion"
+    // # Debug Local Storage
+    debugImplementation "com.amitshekhar.android:debug-db:$rootProject.ext.debugDBVersion"
+
+    // # Dependency Injection
+    implementation "com.google.dagger:dagger:$rootProject.dagger2Version"
+    kapt "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
+    kapt "com.google.dagger:dagger-android-processor:$rootProject.dagger2Version"
+    implementation "com.google.dagger:dagger-android-support:$rootProject.daggerAndroidSupportVersion"
+
+    // # Reactive
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxjava2Version"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxandroidVersion"
+
+    // # Logger
+    implementation "com.jakewharton.timber:timber:$rootProject.ext.timberVersion"
+
+    // # Local Unit Test
+    testImplementation "junit:junit:$rootProject.ext.junitVersion"
+    testImplementation "org.mockito:mockito-core:$rootProject.mockitoVersion"
+    kaptTest "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
+
+    // UI
+    implementation "com.jakewharton:butterknife:$rootProject.ext.butterKnifeVersion"
+    kapt "com.jakewharton:butterknife-compiler:$rootProject.ext.butterKnifeVersion"
+    implementation "com.prolificinteractive:material-calendarview:$rootProject.ext.materialCalendarViewVersion"
+
+    //  Map
+    implementation "com.google.android.gms:play-services-maps:$rootProject.ext.playServiceVersion"
+    implementation "com.google.android.gms:play-services-location:$rootProject.ext.playServiceVersion"
+    implementation "com.google.android.gms:play-services-places:$rootProject.ext.playServiceVersion"
+    implementation "com.google.maps.android:android-maps-utils:$rootProject.ext.mapsUtils"
+
+    // Firebase
+    implementation "com.google.firebase:firebase-crash:$rootProject.ext.firebaseVersion"
+    implementation "com.google.firebase:firebase-messaging:17.0.0"
+    implementation 'com.firebase:firebase-client-android:2.5.2'
+    implementation "com.google.firebase:firebase-core:$rootProject.ext.firebaseVersion"
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.9.4'
+
+    // # UI Testing
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.espressoVersion"
+    androidTestImplementation "com.android.support.test.espresso:espresso-intents:$rootProject.espressoVersion"
+    androidTestImplementation "org.mockito:mockito-core:$rootProject.mockitoVersion"
+    kaptAndroidTest "com.google.dagger:dagger-compiler:$rootProject.dagger2Version"
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+}

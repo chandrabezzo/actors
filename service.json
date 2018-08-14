@@ -1,0 +1,194 @@
+{
+	"user": {
+		"code": 200, 
+		"message": "Berhasil",
+		"data" : {
+			"id" : 1,
+			"nama" : "Chandra Abdul Fattah",
+			"jabatan": "Mobile Programmer",
+			"alamat": {
+				"rt": "4",
+				"rw": "2",
+				"lokasi": "Jl. Buahdua - Sanca No.1",
+				"kecamatan": "Buahdua",
+				"kabupaten": "Sumedang"
+			}
+		}
+	},
+	"socialMedia": {
+		"linkedin": "https://www.linkedin.com/in/chandra-abdul-fattah/",
+		"email": "chandraaf28@gmail.com"
+	},
+	"jabatan" : {
+		"code" : 200,
+		"message": "Berhasil",
+		"data" : [
+			{
+				"id" : 1,
+				"jenis" : "Android Programmer"
+			},
+			{
+				"id" : 2,
+				"jenis" : "iOS Programmer"
+			},
+			{
+				"id" : 3,
+				"jenis" : "Java Programmer"
+			},
+			{
+				"id" : 4,
+				"jenis" : "PHP Programmer"
+			},
+			{
+				"id" : 5,
+				"jenis" : "FrontEnd Programmer"
+			},
+			{
+				"id" : 6,
+				"jenis" : "UI / UX Designer"
+			},
+			{
+				"id" : 7,
+				"jenis" : "Business Proccess Analyst"
+			},
+			{
+				"id" : 8,
+				"jenis" : "Quality Assurance"
+			},
+			{
+				"id" : 9,
+				"jenis" : "Quality Constraint"
+			},
+			{
+				"id" : 10,
+				"jenis" : "Administration"
+			},
+			{
+				"id" : 11,
+				"jenis" : "Accounting"
+			},
+			{
+				"id" : 12,
+				"jenis" : "General Affairs"
+			}		
+		]
+	},
+	"karyawan" : [
+			{
+				"id" : 1,
+				"nama" : "Adi Setiawan"
+			},
+			{
+				"id" : 2,
+				"nama" : "Adib"
+			},
+			{
+				"id" : 3,
+				"nama" : "Adik Darmadi"
+			},
+			{
+				"id" : 4,
+				"nama" : "Andri Hardi Gunandi"
+			},
+			{
+				"id" : 5,
+				"nama" : "Prastiyo Beka"
+			},
+			{
+				"id" : 6,
+				"nama" : "Yusuf"
+			},
+			{
+				"id" : 7,
+				"nama" : "Jaenudin"
+			},
+			{
+				"id" : 8,
+				"nama" : "Chandra Abdul Fattah"
+			},
+			{
+				"id" : 9,
+				"nama" : "Rizki Aulia Panca"
+			},
+			{
+				"id" : 10,
+				"nama" : "M. Arif Rahman"
+			},
+			{
+				"id" : 11,
+				"nama" : "Syamsu Rijal Ali"
+			},
+			{
+				"id" : 12,
+				"nama" : "Aulia Nanda"
+			},
+			{
+				"id" : 13,
+				"nama" : "Anne Nurkamila"
+			},		
+			{
+				"id" : 14,
+				"nama" : "Aulia Nanda"
+			},
+			{
+				"id" : 15,
+				"nama" : "Ghani"
+			},
+			{
+				"id" : 16,
+				"nama" : "Ahmad Faisal"
+			},
+			{
+				"id" : 17,
+				"nama" : "Teddy"
+			},
+			{
+				"id" : 18,
+				"nama" : "Neni Risnawati"
+			},
+			{
+				"id" : 19,
+				"nama" : "Bayu ADA"
+			},
+			{
+				"id" : 20,
+				"nama" : "Syamsudin"
+			},
+			{
+				"id" : 21,
+				"nama" : "Narenda"
+			},
+			{
+				"id" : 22,
+				"nama" : "Hakim"
+			},
+			{
+				"id" : 23,
+				"nama" : "Naftali"
+			},
+			{
+				"id" : 24,
+				"nama" : "Deska Susanti"
+			},
+			{
+				"id" : 25,
+				"nama" : "Rahmi Alawiyah"
+			},
+			{
+				"id" : 26,
+				"nama" : "Hasna Nabila"
+			},
+			{
+				"id" : 27,
+				"nama" : "Asri"
+			},
+			{
+				"id" : 28,
+				"nama" : "M. Rahman"
+			},
+			{
+				"id" : 21,
+				"nama" : "Riki Sukmawan"
+			}
+		]
+}

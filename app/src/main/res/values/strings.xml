@@ -1,0 +1,33 @@
+<resources>
+    <!--<string name="app_name">CoreMVP</string>-->
+
+    <!-- Default -->
+    <string name="turn_on_gps">Please Turn On GPS</string>
+    <string name="some_error">Some Error Occurred!</string>
+    <string name="search">Search</string>
+    <string name="pengaturan_gps">Pengaturan GPS</string>
+    <string name="akurasi_tinggi_mode">Aktifkan GPS dan gunakan mode akurasi tinggi untuk mendapatkan lokasi.</string>
+    <string name="perizinan">Perizinan</string>
+    <string name="message_perizinan">Izinkan aplikasi mengakses %s supaya aplikasi dapat berjalan baik.</string>
+    <string name="cancel">Batal</string>
+    <string name="ok">Ok</string>
+    <string name="not_support_play_service">Not support Google Play Service</string>
+    <string name="device_not_support">"This device is not supported"</string>
+    <string name="service_not_found">Service not found</string>
+    <string name="network_not_stable">Make sure your internet is stable</string>
+    <string name="server_error">Server Error</string>
+    <string name="service_not_connected">Not connected to the service</string>
+    <string name="no_access">You Have No Access</string>
+    <string name="log_receive_response" formatted="false">Received response for %s in %.1fms%n%s</string>
+    <string name="log_sending_response" formatted="false">Sending request %s on %s%n%s</string>
+    <string name="log_encoded_path" formatted="false">Encoded path %s</string>
+    <string name="log_data_is_null">Data is null</string>
+
+    <!-- Main -->
+    <string name="home">Home</string>
+    <string name="detail">Detail</string>
+
+    <string name="name">Name</string>
+    <string name="dob">Dob</string>
+    <string name="description">Description</string>
+</resources>
